@@ -1,0 +1,874 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: absolute;
+    /* Makes it overlay on hero */
+    width: 100%;
+    background: transparent;
+    /* Ensures no separate background */
+    color: white;
+    z-index: 10;
+    /* Keeps it above other elements */
+}
+
+
+header .logo img {
+    height: 20px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: none;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #ffccbc;
+}
+
+/* Dropdown Styling */
+select option:disabled {
+    color: rgba(0, 0, 0, 0.3);
+    /* Decreases opacity */
+}
+
+
+select {
+    color: rgba(143, 142, 142, 0.7);
+    /* 0.7 makes it slightly transparent */
+}
+
+
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    background: url('../img/bg.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+    /* Prevents new elements from affecting layout */
+}
+
+/* Optional: Add a slight overlay for readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Slight dark overlay */
+    z-index: 1;
+    pointer-events: none;
+    /* Ensures clicks pass through */
+}
+
+/* Ensure hero content appears above the overlay */
+.hero * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Dropdown styling */
+.hero select {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Container for elements */
+.hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Hero Heading */
+.hero h1 {
+    font-family: 'Arimo', sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -2px;
+    text-transform: none;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7),
+        0px 0px 15px rgba(251, 248, 248, 0.8);
+    /* Red Glow */
+}
+
+/* Hero Hover Effect */
+.hero:hover {
+    filter: brightness(90%) contrast(105%);
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Zomato Logo Styling */
+.zomato-logo {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12vw;
+    /* Responsive size */
+    font-weight: 700;
+    color: #ff2e63;
+    /* Zomato’s signature color */
+    text-transform: none;
+    text-align: center;
+    white-space: nowrap;
+    /* Prevents text wrapping */
+}
+
+
+
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    /* Border around both elements */
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensures elements stay merged */
+    width: 100%;
+    max-width: 600px;
+    /* Adjust as needed */
+    background: white;
+}
+
+.search-container select {
+    width: 120px;
+    /* Smaller city dropdown */
+    padding: 10px;
+    border: none;
+    background: #f8f8f8;
+}
+
+.search-container input {
+    flex: 1;
+    /* Takes up remaining space */
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+h2#subhead {
+    font-family: Arial, sans-serif;
+    /* Set font to Arial */
+    font-size: 54px;
+    /* Adjust text size */
+    font-weight: normal;
+    /* Ensure no bold */
+    color: #f7f6f6;
+    /* Text color */
+    text-align: center;
+    /* Center align */
+    margin-bottom: 20px;
+    /* Space below */
+}
+
+h2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 1s ease forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2 {
+    animation-delay: 0.5s;
+}
+
+.features h2 {
+    animation-delay: 1s;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    background: white;
+}
+
+
+/* Features Section - Modified to Categories */
+/* Categories Section */
+/* Categories Section */
+.categories {
+    display: flex;
+    gap: 30px;
+    /* Space between categories */
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.category {
+    width: 250px;
+    /* Increased width */
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.category img {
+    width: 100%;
+    height: 180px;
+    /* Increased height */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.category p {
+    padding: 12px;
+    font-size: 20px;
+    /* Slightly bigger text */
+    font-weight: normal;
+    color: #333;
+    margin: 0;
+}
+
+.category:hover {
+    transform: scale(1.05);
+}
+
+.app-section {
+    display: flex !important;
+    align-items: center !important;
+    /* Align items vertically */
+    justify-content: center !important;
+    /* Ensure space between text and image */
+    text-align: center;
+    gap: 50px !important;
+    background-color: #f8f8f8 !important;
+    color: #222 !important ;
+    /* Light Yellow */
+    background: linear-gradient(to bottom, #222,#444);
+    padding: 40px 60px !important;
+    margin: 0 auto !important;
+    border-radius: 10px !important;
+    /* Optional: Adds slight rounded corners */
+    flex-wrap: wrap;
+}
+
+.app-info {
+    flex: 1 !important;
+    max-width: 50% !important;
+}
+
+.app-info h2 {
+    font-size: 54px !important;
+    margin-bottom: 30px !important;
+    font-weight: normal;
+}
+
+.input-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 50px !important;
+    /* Reduce space between inputs */
+    margin-bottom: 20px !important;
+    /* Reduce space below */
+    ;
+    margin-top: 30px;
+}
+.app-description {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.input-group input[type="text"] {
+    padding: 8px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 5px !important;
+}
+
+.input-group button {
+    background-color: red !important;
+    align-items: center !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    border: none !important;
+    cursor: pointer !important;
+    border-radius: 5px !important;
+}
+
+.download-buttons {
+    display: flex !important;
+    gap: 30px !important;
+    /* Reduce space between buttons */
+    margin-top: 10px !important;
+    /* Bring buttons closer */
+    max-width: 55% !important;
+}
+
+.download-buttons img {
+    width: 110px !important;
+    /* Slightly adjust button size */
+}
+
+.app-image img {
+    width: 50% !important;
+    /* Adjust app image size */
+    max-width: 700px;
+    margin-left: -200px !important;
+    /* Move image closer to the text */
+}
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes buttonHover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Applying Animations */
+.app-section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.app-info {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.app-image img {
+    animation: slideInRight 1s ease-in-out;
+}
+
+.input-group button:hover {
+    animation: buttonHover 0.5s ease-in-out;
+}
+
+.download-buttons img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.download-buttons img:hover {
+    transform: scale(1.1);
+}
+
+.food-section {
+    background-color: white; /* Keeps it separate from the previous background */
+    padding: 60px 20px;
+    text-align: center;
+    margin: 50px auto; /* Centers the section without affecting other elements */
+}
+
+/* Content Styling */
+.food-section .content h1 {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e22d2d; /* Dark text for contrast */
+}
+
+.food-section .content p {
+    font-size: 18px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 30px auto; /* Centers text */
+    margin-top: 30px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Stats Styling */
+.stats {
+    display: flex;
+    justify-content: center; /* Centering the items */
+    gap: 30px; /* Space between stat items */
+    margin-top: 0px;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+}
+
+.stat-item {
+    display: flex;
+    align-items: center; /* Align image and text in the same line */
+    gap: 15px; /* Space between image and text */
+    background: #fff; /* White background */
+    padding: 15px 20px;
+    border-radius: 10px; /* Smooth corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    max-width: 250px; /* Adjust width */
+    text-align: left;
+    margin-top: 20px;
+}
+
+.stat-icon {
+    width: 50px; /* Adjust the icon size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.stat-text {
+    display: flex;
+    flex-direction: column; /* Stack h2 and p vertically */
+}
+
+.stat-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #e22d2d; /* Adjust to your theme */
+}
+
+.stat-text p {
+    font-size: 16px;
+    color: #555;
+    margin: 5px 0 0 0; /* Reduce space above */
+}
+/* Add fade-in effect when the section loads */
+.stats {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Individual stat item animation */
+.stat-item {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: popIn 0.5s ease-out forwards;
+}
+
+/* Delay each stat-item animation for a cascading effect */
+.stat-item:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.stat-item:nth-child(2) {
+    animation-delay: 0.6s;
+}
+.stat-item:nth-child(3) {
+    animation-delay: 0.9s;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for pop-in effect */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Add a subtle hover effect */
+.stat-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Floating Images Container */
+.floating-images {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+/* Floating Image Styles */
+.floating-img {
+    position: absolute;
+    width: 200px; /* Adjust image size */
+    animation: float 4s infinite alternate ease-in-out;
+}
+
+/* Positions of the Floating Images */
+.img1 { top: 10px; left: 10%; animation-delay: 0s; }
+.img2 { top: 20px; left: 40%; animation-delay: 1s; }
+.img3 { top: 5px; left: 70%; animation-delay: 2s; }
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(20px); }
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #d32f2f;
+    color: white;
+    margin-top: 20px;
+}
+
+
+.container {
+    max-width: 550px !important;
+    /* Shrinks the container width */
+    margin: 20px auto;
+    /* Centers the container */
+    background: white;
+    padding: 10px 15px !important;
+    /* Reduces padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.app-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* Reducing the padding */
+    background: #fff5f5;
+    border-radius: 10px;
+    margin-top: 5px;
+    /* Less gap between sections */
+}
+
+.app-info {
+    text-align: left;
+    flex: 1;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Reducing space between input and button */
+}
+
+.input-group input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+    /* Smaller input field */
+}
+
+.input-group button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    /* Less space between the download buttons */
+}
+
+.download-buttons img {
+    width: 100px;
+    /* Smaller download images */
+}
+
+.app-image img {
+    width: 200px;
+    /* Shrinks the app image */
+    margin-bottom: -10px;
+    /* Moves the image closer to the input section */
+}
+
+
+/* Footer Base Styling */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 30px 0;
+    text-align: left;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    font-family: Arial, sans-serif;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Footer Heading */
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 40px;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+h4:hover {
+    color: #ffcc00; /* Highlight color on hover */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    white-space: nowrap;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Footer Links */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #ddd;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer-column ul li:hover {
+    transform: translateX(5px);
+    color: #ffcc00; /* Highlight color */
+}
+
+/* Social Media Icons */
+.social-links .icons span {
+    font-size: 20px;
+    margin-right: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.social-links .icons span:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.social-links .icons span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.social-links .icons span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* App Download Buttons */
+.app-links button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.app-links .appstore {
+    background-color: black;
+}
+
+.app-links .playstore {
+    background-color: #333;
+}
+
+.app-links button:hover {
+    transform: scale(1.05);
+}
+
+/* Footer Wrapper */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Animations */
+#citySelect {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#citySelect:hover {
+    border-color: #ff4d4d;
+    /* Zomato red */
+    background: #fff5f5;
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+}
+
+#citySelect option {
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#citySelect option:hover {
+    background: #ff4d4d;
+    color: white;
+}
